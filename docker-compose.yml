@@ -1,0 +1,20 @@
+# docker-compose.yml
+
+version: "3.8"
+
+services:
+  fastapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fastapi
+    restart: always
+    volumes:
+      - type: bind
+        # The env variable ${LOCAL_WORKSPACE_FOLDER} passes the 
+        # host workspace path to the devcontainer so that 
+        # docker-from-docker can be used in the devcontainer
+        source: ${LOCAL_WORKSPACE_FOLDER:-.}
+        target: /app
+    ports:
+      - 8000:8000
