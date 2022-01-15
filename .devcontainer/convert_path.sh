@@ -1,6 +1,6 @@
 #!/bin/bash
 s=$1
-echo $s
+echo "Path being converted: $s"
 s=${s/A:/a}
 s=${s/B:/b}
 s=${s/C:/c}
@@ -30,7 +30,7 @@ s=${s/Z:/z}
 s=${s/:}
 s=${s//\\//}
 s="/${s}"
-echo $s
+echo "Result: $s"
 s="export LOCAL_WORKSPACE_FOLDER=${s}"
 echo $s >> /etc/profile
 echo $s >> /etc/bash.bashrc

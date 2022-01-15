@@ -1,5 +1,5 @@
 {
-	"name": "nextapp .devcontainer",
+	"name": "fastapi .devcontainer",
 	"dockerFile": "Dockerfile",
 	"runArgs": ["--init"],
 	"mounts": [ "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind" ],
@@ -16,7 +16,7 @@
 	},
 
 	// Converts LOCAL_WORKSPACE_FOLDER from windows path format to linux path format so that it can be used with docker-compose
-	"postCreateCommand": "sudo bash ./.devcontainer/LOCAL_WORKSPACE_FOLDER_to_Linux_path.sh ${LOCAL_WORKSPACE_FOLDER}",
+	"postCreateCommand": "sudo bash ./.devcontainer/convert_path.sh ${LOCAL_WORKSPACE_FOLDER}",
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": {},
