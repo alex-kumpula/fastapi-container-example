@@ -15,7 +15,8 @@
 		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
 	},
 
-	// Converts LOCAL_WORKSPACE_FOLDER from windows path format to linux path format so that it can be used with docker-compose
+	// Converts LOCAL_WORKSPACE_FOLDER from windows path format to linux path format 
+	// which is required to run docker-from-docker as it references the docker host's paths
 	"postCreateCommand": "sudo bash ./.devcontainer/convert_path.sh ${LOCAL_WORKSPACE_FOLDER}",
 
 	// Set *default* container specific settings.json values on container create.
